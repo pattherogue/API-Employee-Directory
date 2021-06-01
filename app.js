@@ -14,24 +14,56 @@ fetch(urAPI)
     .then(displayEmployees)
     .catch(err => console.log(err))
 
-    function displayEmployee(employeeData) {
+function displayEmployee(employeeData) {
 
-        employees = employeeData;
+    employees = employeeData;
 
-        // stpre the employee HTML created 
-        let employeeHTML = '';
+    // stpre the employee HTML created 
+    let employeeHTML = '';
 
-        // loop through each employee and create HTML markup
-        employees.forEach(employee, index) => {
-            let name = employee.name;
-            let email = employee.email;
-            let city = employee.location.city;
-            let pictre = employee.picture;
+    // loop through each employee and create HTML markup
+    employees.forEach((employee, index) => {
+        let name = employee.name;
+        let email = employee.email;
+        let city = employee.location.city;
+        let picture = employee.picture;
 
-            employeeHTML += `
-            
-            
-            `
-            }
-        }
-    }
+        employeeHTML += `
+            <div class="card" data-index="${index}">
+                <img class="avatar" src="${picture.large}" />
+                <div class="text-container">
+                    <h2 class="name">${name.first} ${name.last}</h2>
+                        <p class="email">${email}</p>
+                        <p class="adress">${city}</p>
+                </div>
+            </div>
+        `
+    });
+        
+    gridContainer.innerHTML = employeeHTML;
+}
+
+function displayModal(index) {
+
+    //use object destructuring make our template literal cleaner
+    let { name, dob, phone, email, location: { city, street, state, postcode
+    }, picture } = employee[index];
+
+    let date = new Date(dob.date);
+
+    const modalHTML = `
+        <img class="avatar" src="${picture.large}" />
+        <div class="text-container">
+            <h2 class="name">${name.first} ${name.last}</h2>
+            <p class="email">${email}</p>
+            <hr />
+            <p>${phone}</p>
+            <p class="address">${street}, ${state} ${postcode}</p>
+            <p>Birthday:
+    ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+        </div>
+    `;
+
+    overlay.classList.remove("hidden");
+    modalContainer.innerHTML = modalHTML;
+}
