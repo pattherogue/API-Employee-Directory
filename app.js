@@ -1,11 +1,11 @@
 // global variables
-let employees = [];
+let employees = []; //empy array hold value from API
 const urAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
-email, location, phone, dob &noinfo &nat=US`
-const gridContainer = document.querySelector(".grid-container");
-const overlay = document.querySelector(".overlay");
-const modalContainer = document.querySelector(".modal-content");
-const modalCLose = document.querySelector(".modal-close");
+email, location, phone, dob &noinfo &nat=US` //string literal stores the url of API
+const gridContainer = document.querySelector(".grid-container"); //container for employees
+const overlay = document.querySelector(".overlay"); //overlay for modal
+const modalContainer = document.querySelector(".modal-content"); //container for modal information
+const modalCLose = document.querySelector(".modal-close"); //modals close button
 
 //fetch data from API
 fetch(urAPI)
