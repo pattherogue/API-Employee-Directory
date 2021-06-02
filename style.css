@@ -1,34 +1,114 @@
-body {
-    position: relative;
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
 
+body {
+    position: relative;
+    max-width: 1024px;
+    margin: auto;
+    background: rgb(232, 232, 232);
+}
+h1 {
+    font-size: 20px;
+    color: rgb(70, 70, 70);
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 17px;
+}
+p {
+    font-size: 14px;
+    color: gray;
+}
+header {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 25px;
+    justify-content: center;
+}
+.card {
+    display: flex;
+    flex-basis: auto;
+    background: rgb(245, 245, 245);
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 5px;
+    height: 150px;
+}
+.card img {
+    height: 130px;
+    padding: 13px;
+    border-radius: 50%;
+}
+.card .text-container {
+    align-self: center;
+    padding-right: 15px;
+}
+.card .text-container .email,
+.card .text-container .address
+{
+   padding-top: 5px; 
+   font-weight: 300;
+}
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(100, 100, 100, 0.4);
 }
-
 .modal {
-    width: 375px;
-    margin: 15% auto auto;
-    position: relative;
-    text-align: center;
-    background: #fff;
-    border: 1px solid #778;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    width: 370px;
+    height: 430px;
+    background: rgb(225, 225, 225);
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
-    padding: 30px 20px; 
 }
-
 .modal-close {
-    position: absolute;
-    right: 15px;
-    top: 5px;
+    display: flex;
+    margin-left: auto;
+    margin-right: 30px;
+    margin-top: 10px;
+    background: transparent;
+    border: none;
     cursor: pointer;
 }
-
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar {
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.modal .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+.modal p {
+    padding-top: 8px;
+    color: rgba(138, 138, 138, 0.9);
+}
+.modal hr {
+    width: 280px;
+    margin-top: 25px;
+    margin-bottom: 18px;
+    border-color: rgba(223, 223, 223, 0.4);
+}
 .hidden {
     display: none;
 }
