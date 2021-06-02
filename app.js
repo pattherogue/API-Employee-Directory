@@ -1,7 +1,7 @@
 // global variables
 let employees = [];
-const urAPI = `https://randomuser.me/api/?results=12&inc=name, 
-picture, email, location, phone, dob &noinfo &nat=US`
+const urAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
+email, location, phone, dob &noinfo &nat=US`
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
@@ -14,7 +14,7 @@ fetch(urAPI)
     .then(displayEmployees)
     .catch(err => console.log(err))
 
-function displayEmployee(employeeData) {
+function displayEmployees(employeeData) {
 
     employees = employeeData;
 
@@ -67,3 +67,20 @@ function displayModal(index) {
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
 }
+
+gridContainer.addEventListener('click', e=> {
+
+    //make sure click is not on gridContainer
+    if (e.target !== gridContainer) {
+
+        //select card element based on proximity
+        const card = e.target.closest(".card");
+        const index = card.getAttribute('data-index ');
+
+        displayModal(index);
+    }
+});
+
+modalCLose.addEventListener('click', () => {
+    overlay.classList.add("hidden");
+});
