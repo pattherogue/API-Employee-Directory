@@ -5,7 +5,7 @@ email, location, phone, dob &noinfo &nat=US` //string literal stores the url of 
 const gridContainer = document.querySelector(".grid-container"); //container for employees
 const overlay = document.querySelector(".overlay"); //overlay for modal
 const modalContainer = document.querySelector(".modal-content"); //container for modal information
-const modalCLose = document.querySelector(".modal-close"); //modals close button
+const modalClose = document.querySelector(".modal-close"); //modals close button
 
 //fetch data from API
 fetch(urAPI)
@@ -60,7 +60,7 @@ function displayModal(index) {
                 <p class="address">${city}</p>
                 <hr />
                 <p>${phone}</p>
-                <p class="address">${street}, ${state} ${postcode}</p>
+                <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
                 <p>Birthday:
                 ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
             </div>
