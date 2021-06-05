@@ -37,6 +37,12 @@ header {
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 25px;
     justify-content: center;
+
+
+
+    border: 1px solid red;
+ 
+
 }
 
 .card {
@@ -44,19 +50,30 @@ header {
     flex-basis: auto;
     background: rgb(245, 245, 245);
     border: 1px solid rgb(177, 177, 177);
-    border-radius: 5px;
+    border-radius: 15px;
     height: 150px;
+
+
+    border: 1px solid red;
+   
 }
 
 .card img {
     height: 130px;
     padding: 13px;
     border-radius: 50%;
+
+  
+
+    border: 1px solid red;
 }
 
 .card .text-container {
     align-self: center;
     padding-right: 15px;
+
+
+    border: 1px solid red;
 }
 
 .card .text-container .email,
