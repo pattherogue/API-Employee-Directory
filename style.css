@@ -39,7 +39,6 @@ header {
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 10px;
     justify-content: space-between;
-
 }
 
 .card {
@@ -49,35 +48,19 @@ header {
     border: 1px solid rgb(177, 177, 177);
     border-radius: 8px;
     
-    height: 150px;
-    max-width: 97%;
-
-    
-      
+    height: 125px;
+    max-width: 98%;
 }
 
 .card img {
     height: 100px;
     padding: 10px;
-    border-radius: 50%;
-    
-
-   
+    border-radius: 50%;   
 }
-
-
 
 .card .text-container {
     align-self: center;
     padding-right: 15px;
-
-
-    /*width: 50%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    */
 }
 
 .card .text-container .email,
@@ -86,7 +69,6 @@ header {
    font-weight: 300;
    
    margin-right: 2em;
-  
 }
 
 .overlay {
